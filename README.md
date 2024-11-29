@@ -3,24 +3,23 @@
 # Word Guessing Game - To-Do List
 
 ## Features to Add:
-- [ ] **Game Replay Option**
+- [x] **Game Replay Option**
     - Allow the user to choose if they want to play another round after finishing one game.
 
-- [ ] **Themed Word Lists**
+- [x] **Themed Word Lists**
     - Create multiple themed word lists (e.g., Movies, Animals, Countries, Sports).
     - Let the user select a theme before starting the game.
     - Randomly select words from the chosen theme.
 
-- [ ] **Enhanced User Interaction**
+- [x] **Enhanced User Interaction**
     - Provide clear and engaging instructions at the start of the game.
     - Add dynamic messages for correct guesses, incorrect guesses, and game outcomes (win/lose).
-    - Implement a hint system (e.g., reveal the first letter or give a clue about the word category).
 
 - [ ] **Score Tracking**
     - Track wins, losses, and game streaks across multiple rounds.
     - Display scores at the end of each game.
 
-- [ ] **Statistics Display**
+- [x] **Statistics Display**
     - Show overall statistics, such as:
         - Total games played.
         - Average guesses per word.
