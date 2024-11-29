@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Stats stats = new Stats();
 
         welcome();
 
@@ -12,14 +13,30 @@ public class App {
             askPickTheme();
 
             int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            // Handle invalid input for theme choice
+            if (choice < 1 || choice > ThemePicker.values().length) {
+                System.out.println("Invalid choice! Please pick a valid theme.");
+                continue;  // Skip this iteration and ask for a valid choice
+            }
+
             ThemePicker selectedTheme = ThemePicker.fromChoice(choice);
             String[] words = selectedTheme.getWords();
 
             WordGuessingGame game = new WordGuessingGame(words, 8);
 
-            game.play(scanner);
-        }
+            String result = game.play(scanner);
 
+            stats.incrementTotalGames();
+            System.out.println(stats);
+
+            if(result.equals("win")){
+                stats.incrementWonGames();
+            } else if(result.equals("loss")){
+                stats.incrementLostGames();
+            }
+        }
         System.out.println("\nGoodbye!");
     }
 

@@ -7,9 +7,9 @@ public class Stats {
 
     // Constructor to initialize the stats to zero
     public Stats() {
-        totalGames = 0;
-        lostGames = 0;
-        wonGames = 0;
+        this.totalGames = 0;
+        this.lostGames = 0;
+        this.wonGames = 0;
     }
 
     // Increment the total game count
