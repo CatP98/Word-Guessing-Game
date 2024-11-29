@@ -21,14 +21,37 @@ public class WordGuessingGame {
     }
 
     public void play(){
+        System.out.println("The word is: " + wordToGuess);
         Scanner scanner = new Scanner(System.in);
 
         while (attempts > 0) {
             System.out.println("You have "+ attempts + " left.");
             System.out.println("Guess a letter: ");
+            char guess = scanner.nextLine().toLowerCase().charAt(0);
+
+            if(!processGuess(guess)){
+                System.out.println("That guess was imcorrect.");
+                attempts--;
+            }
+            else {
+                //guessedLetters.add(guess);
+                System.out.println("Correct!. Letters guessed: " + guessedLetters);
+            }
 
 
-            attempts--;
         }
+
+    }
+
+    private boolean processGuess(char letter){
+        boolean letterFound = false;
+
+        for(int i = 0; i < wordToGuess.length(); i++){
+            if(wordToGuess.charAt(i) == letter) {
+                guessedLetters[i] = letter;
+                letterFound = true;
+            }
+        }
+        return letterFound;
     }
 }
